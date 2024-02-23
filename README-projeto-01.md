@@ -6,25 +6,26 @@ Desenvolver um sistema de gerenciamento de clientes (CRM) utilizando Python e Py
 
 #### Requisitos do Sistema
 
-1. **Modelagem de Dados**:
+1. **Contrato de dados**:
     
-    * Criar uma classe base `Cliente` contendo informações essenciais dos clientes.
-    * Implementar uma classe `ClienteAvancado` que herda de `Cliente` e adiciona três novos campos calculados: `nome_completo`, `ano_de_cadastro` e `status_atividade`.
+    * Criar um contrato de dados `Cliente` contendo informações essenciais dos clientes.
+    * Implementar um contrato chamado `ClienteCalculado` que herda de `Cliente` e adiciona três novos campos calculados: `nome_completo`, `ano_de_cadastro` e `status_atividade`.
+    * Esse contrato precisa ser capaz de receber dados de uma restAPI vinda da equipe de desenvolvimento
 2. **Transformação de Dados**:
     
-    * Desenvolver uma função `transformar_cliente` que recebe uma instância de `Cliente`, realiza cálculos para os campos adicionais e retorna uma instância de `ClienteAvancado` contendo todos os dados originais mais os campos calculados.
+    * Desenvolver uma função `transformar_cliente` que recebe uma instância de `Cliente`, realiza cálculos para os campos adicionais e retorna uma instância de `ClienteCalculado` contendo todos os dados originais mais os campos calculados.
 3. **Documentação com MkDocs**:
     
     * Documentar todo o processo de desenvolvimento, modelagem de dados, uso da função de transformação e execução de testes unitários utilizando MkDocs.
 4. **Testes Unitários**:
     
-    * Criar testes unitários para validar a correta transformação de instâncias de `Cliente` para `ClienteAvancado`, incluindo a verificação dos campos calculados.
+    * Criar testes unitários para validar a correta transformação de instâncias de `Cliente` para `ClienteCalculado`, incluindo a verificação dos campos calculados.
 
 #### Especificação das Classes
 
 * **Classe `Cliente`**:
     * Campos: `nome`, `sobrenome`, `email`, `telefone` (opcional), `data_de_cadastro`, `categoria`, `empresa` (opcional), `endereco` (opcional), `is_ativo`, `id_cliente`.
-* **Classe `ClienteAvancado`**:
+* **Classe `ClienteCalculado`**:
     * Herda todos os campos de `Cliente`.
     * Adiciona campos calculados:
         * `nome_completo`: Concatenação de `nome` e `sobrenome`.
@@ -44,7 +45,7 @@ A função `transformar_cliente` deve realizar as seguintes operações:
 Utilizar MkDocs para criar uma documentação detalhada do projeto, incluindo:
 
 * Uma introdução ao projeto e seus objetivos.
-* Descrições detalhadas das classes `Cliente` e `ClienteAvancado`.
+* Descrições detalhadas das classes `Cliente` e `ClienteCalculado`.
 * Um guia sobre como utilizar a função `transformar_cliente`.
 * Instruções para executar os testes unitários.
 
@@ -52,8 +53,8 @@ Utilizar MkDocs para criar uma documentação detalhada do projeto, incluindo:
 
 Desenvolver testes unitários usando o framework `pytest` para:
 
-* Testar a criação de instâncias de `Cliente` e `ClienteAvancado`.
-* Verificar se a transformação de `Cliente` para `ClienteAvancado` é realizada corretamente, incluindo a validação dos campos calculados.
+* Testar a criação de instâncias de `Cliente` e `ClienteCalculado`.
+* Verificar se a transformação de `Cliente` para `ClienteCalculado` é realizada corretamente, incluindo a validação dos campos calculados.
 
 #### Entrega
 

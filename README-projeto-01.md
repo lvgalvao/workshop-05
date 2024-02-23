@@ -1,5 +1,26 @@
 ### Projeto 01: Sistema de CRM com Pydantic
 
+### Workflow
+
+```mermaid
+graph TD;
+    A[restAPI: Instância Cliente] --> B{Função transformar_cliente}
+    B --> C[Calcula nome_completo]
+    B --> D[Extrai ano_de_cadastro]
+    B --> E[Determina status_atividade]
+    C --> F[SQL: Instância ClienteCalculado]
+    D --> F
+    E --> F
+```
+
+### Explicação do Fluxo
+
+* **A**: O processo começa com uma instância da classe `Cliente`, contendo os dados básicos do cliente.
+* **B**: Esta instância é então passada para a função `transformar_cliente`, que é responsável por realizar as transformações necessárias.
+    * **C**: Dentro da função, o `nome_completo` é calculado concatenando o `nome` e `sobrenome`.
+    * **D**: O `ano_de_cadastro` é extraído da `data_de_cadastro`.
+    * **E**: O `status_atividade` é determinado com base no valor de `is_ativo`.
+* **F**: Com base nos valores calculados e nos dados originais do `Cliente`, é criada uma nova instância de `ClienteCalculado`, que agora inclui tanto os dados originais quanto os campos calculados (`nome_completo`, `ano_de_cadastro`, `status_atividade`).
 #### Objetivo
 
 Desenvolver um sistema de gerenciamento de clientes (CRM) utilizando Python e Pydantic, focado na modelagem de dados robusta e na transformação de instâncias de cliente com campos calculados. Este sistema deverá permitir a criação de perfis de clientes, aplicar transformações para gerar novos campos calculados e garantir a integridade dos dados através de testes unitários.

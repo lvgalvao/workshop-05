@@ -1,4 +1,5 @@
-from pydantic import BaseModel, field_validator, ValidationError
+from pydantic import BaseModel, ValidationError, field_validator
+
 
 class CustomValidationModel(BaseModel):
     quantity: int   # Tipo normal, mas vamos validar estritamente

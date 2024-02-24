@@ -1,6 +1,7 @@
 # Vamos criar um Pydantic Model
 from pydantic import BaseModel, ValidationError
 
+
 class Produto(BaseModel):
     """
     Tabela de Produto

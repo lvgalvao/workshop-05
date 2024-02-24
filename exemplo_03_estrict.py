@@ -1,5 +1,6 @@
 from pydantic import BaseModel, ValidationError
-from pydantic.types import StrictInt, StrictBool, StrictFloat, StrictStr
+from pydantic.types import StrictBool, StrictFloat, StrictInt, StrictStr
+
 
 class Produto(BaseModel):
     name: StrictStr

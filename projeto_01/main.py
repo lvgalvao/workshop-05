@@ -8,5 +8,5 @@ def funcao(saudacao: str = 'Ola mundo') -> str:
     Returns:
         saudacao_upper (str): A saudacao que o usuario insere maiuscula.
     """
-    saudacao_upper: str = saudacao.upper
+    saudacao_upper: str = saudacao.upper()
     return saudacao_upper

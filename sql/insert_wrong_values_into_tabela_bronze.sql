@@ -1,6 +1,6 @@
 INSERT INTO produtos_bronze (nome, quantidade, preco, categoria) VALUES
 ('Produto A', 100, 10.0, 'eletronicos'),
-('Produto B', 150, 20.0, 'mobilia'),
+('Produto B', -150, 20.0, 'mobilia'),
 ('Produto C', 200, 15.0, 'informatica'),
 ('Produto D', 50, 5.0, 'decoracao'),
 ('Produto E', 120, 22.0, 'eletronicos'),

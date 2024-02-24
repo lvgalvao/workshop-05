@@ -34,13 +34,14 @@ def extrair_do_sql(query:str) -> pd.DataFrame:
             df = pd.read_sql(query, conn)
 
     return df
+
 if __name__ == "__main__":
     query = "SELECT * FROM produtos_bronze LIMIT 10;"
     df_new = extrair_do_sql(query)
 
     product_schema_infer = pa.infer_schema(df_new)
 
-    with open("inferred_schema.py", "w") as file:
-         file.write(product_schema_infer.to_script())
+    with open("inferred_schema.json", "w") as file:
+         file.write(product_schema_infer.to_json())
 
     print(df_new)
